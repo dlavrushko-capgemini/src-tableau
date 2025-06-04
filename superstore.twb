@@ -541,6 +541,9 @@
           <alias key='true' value='Profitable' />
         </aliases>
       </column>
+      <column caption='Profit per Order' datatype='real' name='[Calculation_539728285103816705]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='sum([Profit])/COUNTD([Order ID])' />
+      </column>
       <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
       <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Postal Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
@@ -859,6 +862,26 @@
       </table>
       <simple-id uuid='{13856E41-2228-41F8-82BB-E6DD021202DB}' />
     </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{0D1115D8-FBC0-48FA-9F93-B64ACCD77362}' />
+    </worksheet>
   </worksheets>
   <windows source-height='30'>
     <window class='worksheet' name='Sheet 1'>
@@ -935,7 +958,7 @@
       </viewpoint>
       <simple-id uuid='{C6E8C010-6BCB-4413-8570-7DE4D2363F96}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 3'>
+    <window class='worksheet' name='Sheet 3'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -972,6 +995,29 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{917D5A8F-630A-4758-A868-C58F87F52D5A}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{037F9550-CA81-481E-A7FF-116B36ED8144}' />
     </window>
   </windows>
   <thumbnails>
