@@ -711,6 +711,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
+            <card param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]' type='filter' />
             <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' type='color' />
           </strip>
         </edge>
