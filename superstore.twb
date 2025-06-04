@@ -544,6 +544,9 @@
       <column caption='Profit per Order' datatype='real' name='[Calculation_539728285103816705]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='sum([Profit])/COUNTD([Order ID])' />
       </column>
+      <column caption='Sales per Customer' datatype='real' name='[Calculation_539728285104570370]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='sum([Sales])/COUNTD([Customer Name])' />
+      </column>
       <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
       <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Postal Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
