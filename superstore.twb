@@ -736,6 +736,7 @@
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
             <column-instance column='[Calculation_539728285099540480]' derivation='None' name='[none:Calculation_539728285099540480:nk]' pivot='key' type='nominal' />
             <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
@@ -744,6 +745,7 @@
         <style>
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='' />
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
           </style-rule>
           <style-rule element='label'>
             <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
@@ -757,6 +759,7 @@
             <mark class='Area' />
             <encodings>
               <color column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' />
+              <lod column='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' />
             </encodings>
           </pane>
         </panes>
