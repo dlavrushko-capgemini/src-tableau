@@ -10,6 +10,7 @@
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
   <preferences>
@@ -868,20 +869,83 @@
     <worksheet name='Sheet 4'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
+            </column>
+            <column caption='Profit per Order' datatype='real' name='[Calculation_539728285103816705]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Profit])/COUNTD([Order ID])' />
+            </column>
+            <column caption='Sales per Customer' datatype='real' name='[Calculation_539728285104570370]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Sales])/COUNTD([Customer Name])' />
+            </column>
+            <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Discount]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Discount]' derivation='Sum' name='[sum:Discount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_539728285103816705]' derivation='User' name='[usr:Calculation_539728285103816705:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_539728285104570370]' derivation='User' name='[usr:Calculation_539728285104570370:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.05nxs871rrckfi1g33glc0jz5325].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_539728285103816705:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_539728285104570370:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Quantity:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.05nxs871rrckfi1g33glc0jz5325].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_539728285103816705:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_539728285104570370:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Quantity:qk]&quot;</bucket>
+              <bucket>&quot;[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Discount:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[:Measure Names]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' value='' />
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.05nxs871rrckfi1g33glc0jz5325].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
-        <cols />
+        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[:Measure Names]</cols>
       </table>
       <simple-id uuid='{0D1115D8-FBC0-48FA-9F93-B64ACCD77362}' />
     </worksheet>
@@ -1006,6 +1070,7 @@
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
+            <card type='measures' />
           </strip>
         </edge>
         <edge name='top'>
