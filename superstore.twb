@@ -787,6 +787,78 @@
       </table>
       <simple-id uuid='{BB0A4348-83D4-4863-9226-9C6EB5EAF964}' />
     </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Order Profitable ?' datatype='boolean' name='[Calculation_539728285099540480]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='{ FIXED [Order ID]: SUM([Profit]) } &gt; 0' />
+              <aliases>
+                <alias key='false' value='Unprofitable' />
+                <alias key='true' value='Profitable' />
+              </aliases>
+            </column>
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_539728285099540480]' derivation='None' name='[none:Calculation_539728285099540480:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' included-values='in-range' />
+          <slices>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='' />
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' />
+              <lod column='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Order Profitable ?:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Month of Order Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Profit:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Sales:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>([federated.05nxs871rrckfi1g33glc0jz5325].[none:Segment:nk] * [federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk])</rows>
+        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</cols>
+      </table>
+      <simple-id uuid='{13856E41-2228-41F8-82BB-E6DD021202DB}' />
+    </worksheet>
   </worksheets>
   <windows source-height='30'>
     <window class='worksheet' name='Sheet 1'>
@@ -826,7 +898,7 @@
       </viewpoint>
       <simple-id uuid='{CC15683A-DB36-4B98-8396-7AA891059F0B}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 2'>
+    <window class='worksheet' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -862,6 +934,44 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{C6E8C010-6BCB-4413-8570-7DE4D2363F96}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type='color' />
+            <card param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]</field>
+            <field>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Category:nk]</field>
+            <field>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Segment:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{917D5A8F-630A-4758-A868-C58F87F52D5A}' />
     </window>
   </windows>
   <thumbnails>
