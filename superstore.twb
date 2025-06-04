@@ -740,6 +740,10 @@
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' included-values='in-range' />
+          <slices>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style>
@@ -845,6 +849,7 @@
         <edge name='right'>
           <strip size='160'>
             <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type='color' />
+            <card param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
           </strip>
         </edge>
       </cards>
