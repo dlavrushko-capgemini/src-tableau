@@ -687,7 +687,15 @@
     <worksheet name='Sheet 2'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Year-Trunc' name='[tyr:Order Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
           <aggregation value='true' />
         </view>
         <style />
@@ -696,11 +704,11 @@
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Area' />
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]</rows>
+        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[tyr:Order Date:qk]</cols>
       </table>
       <simple-id uuid='{BB0A4348-83D4-4863-9226-9C6EB5EAF964}' />
     </worksheet>
