@@ -4,6 +4,7 @@
 <workbook original-version='18.1' source-build='2025.1.2 (20251.25.0520.1026)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
     <ObjectModelTableType />
@@ -619,24 +620,51 @@
       </object-graph>
     </datasource>
   </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
   <worksheets>
     <worksheet name='Sheet 1'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
+            </column>
+            <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:State:nk]' />
+              <color column='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' />
+              <geometry column='[federated.05nxs871rrckfi1g33glc0jz5325].[Geometry (generated)]' />
+            </encodings>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.05nxs871rrckfi1g33glc0jz5325].[Latitude (generated)]</rows>
+        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[Longitude (generated)]</cols>
       </table>
       <simple-id uuid='{B71C3BE1-F3AC-4705-8A61-5B0DED7A4CED}' />
     </worksheet>
@@ -660,6 +688,11 @@
           </strip>
           <strip size='31'>
             <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' type='color' />
           </strip>
         </edge>
       </cards>
