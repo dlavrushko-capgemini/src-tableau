@@ -648,8 +648,10 @@
           <filter class='categorical' column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]'>
             <groupfilter function='level-members' level='[none:Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' included-values='in-range' />
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -706,8 +708,9 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='dropdown' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]' type='filter' />
             <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' type='color' />
+            <card mode='dropdown' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]' type='filter' />
+            <card param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
           </strip>
         </edge>
       </cards>
