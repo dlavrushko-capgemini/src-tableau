@@ -665,6 +665,28 @@
   <mapsources>
     <mapsource name='Tableau' />
   </mapsources>
+  <shared-views>
+    <shared-view name='federated.05nxs871rrckfi1g33glc0jz5325'>
+      <datasources>
+        <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
+      </datasources>
+      <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+        <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
+          <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
+        </column>
+        <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+        <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+        <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]'>
+        <groupfilter function='level-members' level='[none:Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' included-values='in-range' />
+      <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' included-values='in-range' />
+    </shared-view>
+  </shared-views>
   <worksheets>
     <worksheet name='Sheet 1'>
       <table>
@@ -679,25 +701,28 @@
             <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
             </column>
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
             <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
             <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
             <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
             <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]'>
-            <groupfilter function='level-members' level='[none:Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' included-values='in-range' />
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.05nxs871rrckfi1g33glc0jz5325].[Longitude (generated)]' field-type='quantitative' max='-945771.43496058881' min='-19760046.924406745' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.05nxs871rrckfi1g33glc0jz5325].[Latitude (generated)]' field-type='quantitative' max='6370646.7448190395' min='3051311.3704099548' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' value='p0.0%' />
           </style-rule>
@@ -733,6 +758,9 @@
             <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
           </datasources>
           <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
+            </column>
             <column caption='Order Profitable ?' datatype='boolean' name='[Calculation_539728285099540480]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='{ FIXED [Order ID]: SUM([Profit]) } &gt; 0' />
               <aliases>
@@ -744,16 +772,20 @@
             <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
             <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
             <column-instance column='[Calculation_539728285099540480]' derivation='None' name='[none:Calculation_539728285099540480:nk]' pivot='key' type='nominal' />
             <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
             <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' included-values='in-range' />
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -805,6 +837,9 @@
             <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
           </datasources>
           <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
+            </column>
             <column caption='Order Profitable ?' datatype='boolean' name='[Calculation_539728285099540480]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='{ FIXED [Order ID]: SUM([Profit]) } &gt; 0' />
               <aliases>
@@ -815,17 +850,21 @@
             <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
             <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
             <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_539728285099540480]' derivation='None' name='[none:Calculation_539728285099540480:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
             <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
             <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='quantitative' column='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' included-values='in-range' />
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -888,14 +927,18 @@
             </column>
             <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
             <column datatype='real' name='[Discount]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
             <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
             <column-instance column='[Discount]' derivation='Sum' name='[sum:Discount:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_539728285103816705]' derivation='User' name='[usr:Calculation_539728285103816705:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_539728285104570370]' derivation='User' name='[usr:Calculation_539728285104570370:qk]' pivot='key' type='quantitative' />
@@ -923,6 +966,9 @@
           </manual-sort>
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[:Measure Names]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</column>
+            <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1062,14 +1108,6 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='7876' id='31' name='Sheet 2' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='37555'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
             </zone>
           </zone>
           <zone-style>
@@ -1082,10 +1120,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98174' id='32' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
+            <zone h='100000' id='43' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98174' id='42' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
                 <zone fixed-size='95' h='12785' id='9' is-fixed='true' name='Sheet 4' w='88398' x='527' y='913'>
                   <layout-cache fixed-size-h='104' type-h='fixed' type-w='cell' />
                   <zone-style>
@@ -1153,15 +1191,6 @@
                   </zone-style>
                 </zone>
                 <zone h='7534' id='22' name='Sheet 3' pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type-v2='color' w='10547' x='88925' y='30021'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='7876' id='31' name='Sheet 2' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='37555'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1354,7 +1383,7 @@
           <zoom type='fit-width' />
         </viewpoint>
       </viewpoints>
-      <active id='30' />
+      <active id='14' />
       <simple-id uuid='{678CB770-776A-4604-A13C-78A02838CA97}' />
     </window>
   </windows>
