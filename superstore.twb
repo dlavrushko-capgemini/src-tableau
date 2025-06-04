@@ -761,6 +761,21 @@
               <color column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' />
               <lod column='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]' />
             </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Order Profitable ?:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Month of Order Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Profit:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Profit:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Sales:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
           </pane>
         </panes>
         <rows>([federated.05nxs871rrckfi1g33glc0jz5325].[none:Category:nk] * [federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk])</rows>
