@@ -694,11 +694,18 @@
             <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Order Date]' derivation='Year-Trunc' name='[tyr:Order Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]' value='n&quot;$&quot;#,##0;-&quot;$&quot;#,##0' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -708,7 +715,7 @@
           </pane>
         </panes>
         <rows>[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]</rows>
-        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[tyr:Order Date:qk]</cols>
+        <cols>[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]</cols>
       </table>
       <simple-id uuid='{BB0A4348-83D4-4863-9226-9C6EB5EAF964}' />
     </worksheet>
