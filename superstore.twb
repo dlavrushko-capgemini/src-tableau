@@ -646,12 +646,7 @@
             <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]'>
-            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[none:Region:nk]' member='&quot;Central&quot;' />
-              <groupfilter function='member' level='[none:Region:nk]' member='&quot;East&quot;' />
-              <groupfilter function='member' level='[none:Region:nk]' member='&quot;South&quot;' />
-              <groupfilter function='member' level='[none:Region:nk]' member='&quot;West&quot;' />
-            </groupfilter>
+            <groupfilter function='level-members' level='[none:Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]</column>
@@ -711,7 +706,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Region:nk]' type='filter' />
             <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' type='color' />
           </strip>
         </edge>
