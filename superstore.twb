@@ -722,8 +722,18 @@
             <datasource caption='superstore' name='federated.05nxs871rrckfi1g33glc0jz5325' />
           </datasources>
           <datasource-dependencies datasource='federated.05nxs871rrckfi1g33glc0jz5325'>
+            <column caption='Order Profitable ?' datatype='boolean' name='[Calculation_539728285099540480]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='{ FIXED [Order ID]: SUM([Profit]) } &gt; 0' />
+              <aliases>
+                <alias key='false' value='Unprofitable' />
+                <alias key='true' value='Profitable' />
+              </aliases>
+            </column>
             <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Order ID]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Profit]' role='measure' type='quantitative' />
             <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_539728285099540480]' derivation='None' name='[none:Calculation_539728285099540480:nk]' pivot='key' type='nominal' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
@@ -743,6 +753,9 @@
               <breakdown value='auto' />
             </view>
             <mark class='Area' />
+            <encodings>
+              <color column='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' />
+            </encodings>
           </pane>
         </panes>
         <rows>[federated.05nxs871rrckfi1g33glc0jz5325].[sum:Sales:qk]</rows>
@@ -809,7 +822,19 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type='color' />
+          </strip>
+        </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
       <simple-id uuid='{C6E8C010-6BCB-4413-8570-7DE4D2363F96}' />
     </window>
   </windows>
