@@ -998,7 +998,7 @@
                   </zone-style>
                 </zone>
                 <zone h='52683' id='19' param='horz' type-v2='layout-flow' w='88398' x='527' y='46404'>
-                  <zone h='52683' id='20' name='Sheet 3' w='88398' x='527' y='46404'>
+                  <zone h='52683' id='20' name='Sheet 3' w='44199' x='527' y='46404'>
                     <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
                     <zone-style>
                       <format attr='border-color' value='#000000' />
@@ -1006,6 +1006,17 @@
                       <format attr='border-width' value='0' />
                       <format attr='margin' value='4' />
                     </zone-style>
+                  </zone>
+                  <zone h='52683' id='29' param='horz' type-v2='layout-flow' w='44199' x='44726' y='46404'>
+                    <zone h='52683' id='30' name='Sheet 2' w='44199' x='44726' y='46404'>
+                      <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
                   </zone>
                 </zone>
               </zone>
@@ -1051,6 +1062,14 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
+              <zone h='7876' id='31' name='Sheet 2' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='37555'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
             </zone>
           </zone>
           <zone-style>
@@ -1063,10 +1082,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
+          <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='26' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98174' id='25' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
+            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98174' id='32' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
                 <zone fixed-size='95' h='12785' id='9' is-fixed='true' name='Sheet 4' w='88398' x='527' y='913'>
                   <layout-cache fixed-size-h='104' type-h='fixed' type-w='cell' />
                   <zone-style>
@@ -1123,7 +1142,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='52683' id='20' is-fixed='true' name='Sheet 3' w='88398' x='527' y='46404'>
+                <zone fixed-size='280' h='52683' id='20' is-fixed='true' name='Sheet 3' w='44199' x='527' y='46404'>
                   <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1134,6 +1153,25 @@
                   </zone-style>
                 </zone>
                 <zone h='7534' id='22' name='Sheet 3' pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type-v2='color' w='10547' x='88925' y='30021'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7876' id='31' name='Sheet 2' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='37555'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='52683' id='30' is-fixed='true' name='Sheet 2' w='44199' x='44726' y='46404'>
+                  <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1301,6 +1339,9 @@
         <viewpoint name='Sheet 1'>
           <zoom type='entire-view' />
         </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
         <viewpoint name='Sheet 3'>
           <zoom type='entire-view' />
           <highlight>
@@ -1313,7 +1354,7 @@
           <zoom type='fit-width' />
         </viewpoint>
       </viewpoints>
-      <active id='20' />
+      <active id='30' />
       <simple-id uuid='{678CB770-776A-4604-A13C-78A02838CA97}' />
     </window>
   </windows>
