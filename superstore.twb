@@ -1088,6 +1088,9 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
       <simple-id uuid='{037F9550-CA81-481E-A7FF-116B36ED8144}' />
     </window>
   </windows>
