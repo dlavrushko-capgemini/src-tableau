@@ -968,8 +968,10 @@
         <column caption='Profit Ratio' datatype='real' name='[Calculation_280841675263549441]' role='measure' type='quantitative'>
           <calculation class='tableau' formula='sum([Profit])/sum([Sales])' />
         </column>
+        <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
         <column datatype='string' name='[Region]' role='dimension' type='nominal' />
         <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:qk]' pivot='key' type='quantitative' />
         <column-instance column='[Calculation_280841675263549441]' derivation='User' name='[usr:Calculation_280841675263549441:qk]' pivot='key' type='quantitative' />
       </datasource-dependencies>
       <zones>
@@ -985,8 +987,8 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='85389' id='10' param='horz' type-v2='layout-flow' w='88398' x='527' y='13698'>
-                <zone h='85389' id='11' name='Sheet 1' w='88398' x='527' y='13698'>
+              <zone h='85389' id='10' param='vert' type-v2='layout-flow' w='88398' x='527' y='13698'>
+                <zone h='32706' id='11' name='Sheet 1' w='88398' x='527' y='13698'>
                   <layout-cache minheight='244' minwidth='202' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -994,6 +996,17 @@
                     <format attr='border-width' value='0' />
                     <format attr='margin' value='4' />
                   </zone-style>
+                </zone>
+                <zone h='52683' id='19' param='horz' type-v2='layout-flow' w='88398' x='527' y='46404'>
+                  <zone h='52683' id='20' name='Sheet 3' w='88398' x='527' y='46404'>
+                    <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
                 </zone>
               </zone>
             </zone>
@@ -1022,6 +1035,22 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
+              <zone h='7876' id='21' name='Sheet 3' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='22145'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='7534' id='22' name='Sheet 3' pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type-v2='color' w='10547' x='88925' y='30021'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
             </zone>
           </zone>
           <zone-style>
@@ -1034,10 +1063,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98174' id='17' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
+            <zone h='100000' id='26' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98174' id='25' param='vert' type-v2='layout-flow' w='98946' x='527' y='913'>
                 <zone fixed-size='95' h='12785' id='9' is-fixed='true' name='Sheet 4' w='88398' x='527' y='913'>
                   <layout-cache fixed-size-h='104' type-h='fixed' type-w='cell' />
                   <zone-style>
@@ -1066,7 +1095,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='85389' id='11' is-fixed='true' name='Sheet 1' w='88398' x='527' y='13698'>
+                <zone fixed-size='253' h='32706' id='11' is-fixed='true' name='Sheet 1' w='88398' x='527' y='13698'>
                   <layout-cache minheight='244' minwidth='202' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1077,6 +1106,34 @@
                   </zone-style>
                 </zone>
                 <zone h='7420' id='16' name='Sheet 1' pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' type-v2='color' w='10547' x='88925' y='14725'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7876' id='21' name='Sheet 3' param='[federated.05nxs871rrckfi1g33glc0jz5325].[tmn:Order Date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='10547' x='88925' y='22145'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='52683' id='20' is-fixed='true' name='Sheet 3' w='88398' x='527' y='46404'>
+                  <layout-cache minheight='419' minwidth='265' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7534' id='22' name='Sheet 3' pane-specification-id='0' param='[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]' type-v2='color' w='10547' x='88925' y='30021'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1244,11 +1301,19 @@
         <viewpoint name='Sheet 1'>
           <zoom type='entire-view' />
         </viewpoint>
+        <viewpoint name='Sheet 3'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.05nxs871rrckfi1g33glc0jz5325].[none:Calculation_539728285099540480:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
         <viewpoint name='Sheet 4'>
           <zoom type='fit-width' />
         </viewpoint>
       </viewpoints>
-      <active id='11' />
+      <active id='20' />
       <simple-id uuid='{678CB770-776A-4604-A13C-78A02838CA97}' />
     </window>
   </windows>
