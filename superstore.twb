@@ -649,6 +649,9 @@
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' value='p0.0%' />
           </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.05nxs871rrckfi1g33glc0jz5325].[usr:Calculation_280841675263549441:qk]' max='0.5' min='-0.5' num-steps='6' type='interpolated' />
+          </style-rule>
           <style-rule element='map'>
             <format attr='washout' value='0.0' />
           </style-rule>
