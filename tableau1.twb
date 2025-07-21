@@ -1,0 +1,956 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Data Set- Inc5000 Company List_2014' inline='true' name='federated.06c4uyo0yknrmp1d28vav1j2rsyl' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Data Set- Inc5000 Company List_2014' name='textscan.17n64ob10nnift1fvutas1p6xjst'>
+            <connection class='textclean' cleaning='yes' compat='no' csvFile='/Users/vsydor/Downloads/Data Set- Inc5000 Company List_2014.csv' dataRefreshTime='' directory='/Users/vsydor/Downloads' filename='/var/folders/3r/gwnkhyqd6xqc46chjv436b_80000gn/T/tableau-temp/009gbza08dxoxc1dngxtl101vam5/Data Set- Inc5000 Company List_2014.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.17n64ob10nnift1fvutas1p6xjst' name='Data Set- Inc5000 Company List_2014.csv' table='[Data Set- Inc5000 Company#csv$]' type='table'>
+          <columns character-set='UTF-8' gridOrigin='A1:S5001:no:A1:S5001:1' header='yes' locale='en_US' separator=','>
+            <column datatype='real' name='_input' ordinal='0' />
+            <column datatype='integer' name='_num' ordinal='1' />
+            <column datatype='string' name='_widgetName' ordinal='2' />
+            <column datatype='string' name='_source' ordinal='3' />
+            <column datatype='integer' name='_resultNumber' ordinal='4' />
+            <column datatype='string' name='_pageUrl' ordinal='5' />
+            <column datatype='integer' name='id' ordinal='6' />
+            <column datatype='integer' name='rank' ordinal='7' />
+            <column datatype='integer' name='workers' ordinal='8' />
+            <column datatype='string' name='company' ordinal='9' />
+            <column datatype='string' name='url' ordinal='10' />
+            <column datatype='string' name='state_l' ordinal='11' />
+            <column datatype='string' name='state_s' ordinal='12' />
+            <column datatype='string' name='city' ordinal='13' />
+            <column datatype='string' name='metro' ordinal='14' />
+            <column datatype='real' name='growth' ordinal='15' />
+            <column datatype='integer' name='revenue' ordinal='16' />
+            <column datatype='string' name='industry' ordinal='17' />
+            <column datatype='integer' name='yrs_on_list' ordinal='18' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:S5001:no:A1:S5001:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>40008</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_input</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[_input]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_input</remote-alias>
+            <ordinal>0</ordinal>
+            <hidden>true</hidden>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[_num]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_num</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_widgetName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[_widgetName]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_widgetName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_source</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[_source]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_source</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_resultNumber</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[_resultNumber]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_resultNumber</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_pageUrl</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[_pageUrl]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>_pageUrl</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>rank</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>workers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[workers]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>workers</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>company</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[company]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>company</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>url</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[url]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>url</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state_l</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[state_l]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>state_l</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state_s</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[state_s]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>state_s</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metro</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[metro]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>metro</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>growth</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[revenue]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>revenue</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>yrs_on_list</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[yrs_on_list]</local-name>
+            <parent-name>[Data Set- Inc5000 Company List_2014.csv]</parent-name>
+            <remote-alias>yrs_on_list</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Data Set- Inc5000 Company List_2014.csv' datatype='table' name='[__tableau_internal_object_id__].[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]' role='measure' type='quantitative' />
+      <column caption='_Input' datatype='real' hidden='true' name='[_input]' role='dimension' type='ordinal' />
+      <column caption='_Num' datatype='integer' name='[_num]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[_resultNumber]' role='dimension' type='ordinal' />
+      <column caption='_Source' datatype='string' name='[_source]' role='dimension' type='nominal' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Company' datatype='string' name='[company]' role='dimension' type='nominal' />
+      <column caption='Growth' datatype='real' name='[growth]' role='measure' type='quantitative' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column caption='Metro' datatype='string' name='[metro]' role='dimension' type='nominal' />
+      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+      <column caption='Revenue' datatype='integer' name='[revenue]' role='measure' type='quantitative' />
+      <column caption='State L' datatype='string' name='[state_l]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State S' datatype='string' name='[state_s]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Url' datatype='string' name='[url]' role='dimension' type='nominal' />
+      <column caption='Workers' datatype='integer' name='[workers]' role='measure' type='quantitative' />
+      <column caption='Yrs On List' datatype='integer' name='[yrs_on_list]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/3r/gwnkhyqd6xqc46chjv436b_80000gn/T/tableau-temp/#TableauTemp_05ieote04ew861143biwo03829wi.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/07/2025 10:35:10 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>_num</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[_num]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_num</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>_widgetName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[_widgetName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_widgetName</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>_source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[_source]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_source</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>_resultNumber</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[_resultNumber]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_resultNumber</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>_pageUrl</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[_pageUrl]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_pageUrl</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rank</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>workers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[workers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>workers</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>500</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>company</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[company]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>company</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[url]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>url</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state_l</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state_l]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>state_l</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>51</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state_s</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state_s]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>state_s</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>51</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>city</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>974</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>metro</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[metro]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>metro</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>257</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>growth</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[growth]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>growth</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>revenue</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>industry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industry</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>yrs_on_list</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[yrs_on_list]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>yrs_on_list</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Data Set- Inc5000 Company List_2014.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='false' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Data Set- Inc5000 Company List_2014.csv' id='Data Set- Inc5000 Company List_2014.csv_95340E1C4D994990A90D82E6E981AE5A'>
+            <properties context=''>
+              <relation connection='textscan.17n64ob10nnift1fvutas1p6xjst' name='Data Set- Inc5000 Company List_2014.csv' table='[Data Set- Inc5000 Company#csv$]' type='table'>
+                <columns character-set='UTF-8' gridOrigin='A1:S5001:no:A1:S5001:1' header='yes' locale='en_US' separator=','>
+                  <column datatype='real' name='_input' ordinal='0' />
+                  <column datatype='integer' name='_num' ordinal='1' />
+                  <column datatype='string' name='_widgetName' ordinal='2' />
+                  <column datatype='string' name='_source' ordinal='3' />
+                  <column datatype='integer' name='_resultNumber' ordinal='4' />
+                  <column datatype='string' name='_pageUrl' ordinal='5' />
+                  <column datatype='integer' name='id' ordinal='6' />
+                  <column datatype='integer' name='rank' ordinal='7' />
+                  <column datatype='integer' name='workers' ordinal='8' />
+                  <column datatype='string' name='company' ordinal='9' />
+                  <column datatype='string' name='url' ordinal='10' />
+                  <column datatype='string' name='state_l' ordinal='11' />
+                  <column datatype='string' name='state_s' ordinal='12' />
+                  <column datatype='string' name='city' ordinal='13' />
+                  <column datatype='string' name='metro' ordinal='14' />
+                  <column datatype='real' name='growth' ordinal='15' />
+                  <column datatype='integer' name='revenue' ordinal='16' />
+                  <column datatype='string' name='industry' ordinal='17' />
+                  <column datatype='integer' name='yrs_on_list' ordinal='18' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Set- Inc5000 Company List_2014' name='federated.06c4uyo0yknrmp1d28vav1j2rsyl' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.06c4uyo0yknrmp1d28vav1j2rsyl'>
+            <column-instance column='[revenue]' derivation='Avg' name='[avg:revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Company' datatype='string' name='[company]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[company]' derivation='None' name='[none:company:nk]' pivot='key' type='nominal' />
+            <column-instance column='[industry]' derivation='None' name='[none:industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[state_s]' derivation='None' name='[none:state_s:nk]' pivot='key' type='nominal' />
+            <column caption='Revenue' datatype='integer' name='[revenue]' role='measure' type='quantitative' />
+            <column caption='State S' datatype='string' name='[state_s]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[avg:revenue:qk]' included-values='in-range'>
+            <min>9000000.0</min>
+          </filter>
+          <filter class='categorical' column='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:company:nk]'>
+            <groupfilter expression='AVG([revenue]) &gt; 9000000.' function='filter' user:ui-filter-by-field='true' user:ui-marker='filter-by'>
+              <groupfilter function='level-members' level='[none:company:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:company:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Genesys&quot;</bucket>
+              <bucket>&quot;Arista Networks&quot;</bucket>
+              <bucket>&quot;ThunderCat Technology&quot;</bucket>
+              <bucket>&quot;Hyland Software&quot;</bucket>
+              <bucket>&quot;Urban Science&quot;</bucket>
+              <bucket>&quot;Good Technology&quot;</bucket>
+              <bucket>&quot;EagleView Technologies&quot;</bucket>
+              <bucket>&quot;Actian&quot;</bucket>
+              <bucket>&quot;ECi Software Solutions&quot;</bucket>
+              <bucket>&quot;Aerohive Networks&quot;</bucket>
+              <bucket>&quot;ARGO&quot;</bucket>
+              <bucket>&quot;PowerPlan&quot;</bucket>
+              <bucket>&quot;Five9&quot;</bucket>
+              <bucket>&quot;AvePoint&quot;</bucket>
+              <bucket>&quot;HubSpot&quot;</bucket>
+              <bucket>&quot;Varonis Systems&quot;</bucket>
+              <bucket>&quot;WideOrbit&quot;</bucket>
+              <bucket>&quot;VinSolutions&quot;</bucket>
+              <bucket>&quot;Acquia&quot;</bucket>
+              <bucket>&quot;Orasi Software&quot;</bucket>
+              <bucket>&quot;Bullhorn&quot;</bucket>
+              <bucket>&quot;DealerSocket&quot;</bucket>
+              <bucket>&quot;iPipeline&quot;</bucket>
+              <bucket>&quot;Infusionsoft&quot;</bucket>
+              <bucket>&quot;Viztek&quot;</bucket>
+              <bucket>&quot;The Nerdery&quot;</bucket>
+              <bucket>&quot;WorkForce Software&quot;</bucket>
+              <bucket>&quot;Swiftpage&quot;</bucket>
+              <bucket>&quot;Bomgar&quot;</bucket>
+              <bucket>&quot;Mindbody&quot;</bucket>
+              <bucket>&quot;Four Winds Interactive&quot;</bucket>
+              <bucket>&quot;iCIMS&quot;</bucket>
+              <bucket>&quot;Retail Solutions&quot;</bucket>
+              <bucket>&quot;ConnectWise&quot;</bucket>
+              <bucket>&quot;Centrify&quot;</bucket>
+              <bucket>&quot;Idera&quot;</bucket>
+              <bucket>&quot;Relias Learning&quot;</bucket>
+              <bucket>&quot;Systech International&quot;</bucket>
+              <bucket>&quot;SevOne&quot;</bucket>
+              <bucket>&quot;DataArt&quot;</bucket>
+              <bucket>&quot;Code 42&quot;</bucket>
+              <bucket>&quot;Netronome&quot;</bucket>
+              <bucket>&quot;XIFIN&quot;</bucket>
+              <bucket>&quot;BlackLine Systems&quot;</bucket>
+              <bucket>&quot;Superfish&quot;</bucket>
+              <bucket>&quot;LabTech Software&quot;</bucket>
+              <bucket>&quot;Mutual Mobile&quot;</bucket>
+              <bucket>&quot;SofterWare&quot;</bucket>
+              <bucket>&quot;Elemental Technologies&quot;</bucket>
+              <bucket>&quot;IQMS&quot;</bucket>
+              <bucket>&quot;Smarsh&quot;</bucket>
+              <bucket>&quot;Black Duck Software&quot;</bucket>
+              <bucket>&quot;Netcom3 Global&quot;</bucket>
+              <bucket>&quot;Kareo&quot;</bucket>
+              <bucket>&quot;Velocify&quot;</bucket>
+              <bucket>&quot;Moz&quot;</bucket>
+              <bucket>&quot;SendGrid&quot;</bucket>
+              <bucket>&quot;The Rainmaker Group&quot;</bucket>
+              <bucket>&quot;AOD Software&quot;</bucket>
+              <bucket>&quot;Bronto Software&quot;</bucket>
+              <bucket>&quot;Location Labs&quot;</bucket>
+              <bucket>&quot;3Pillar Global&quot;</bucket>
+              <bucket>&quot;Shoptech Industrial Software&quot;</bucket>
+              <bucket>&quot;Decipher&quot;</bucket>
+              <bucket>&quot;InsideSales.com&quot;</bucket>
+              <bucket>&quot;Gimmal&quot;</bucket>
+              <bucket>&quot;Practice Velocity&quot;</bucket>
+              <bucket>&quot;LLamasoft&quot;</bucket>
+              <bucket>&quot;KEMP Technologies&quot;</bucket>
+              <bucket>&quot;Maxymiser&quot;</bucket>
+              <bucket>&quot;Bigcommerce&quot;</bucket>
+              <bucket>&quot;Coupa Software&quot;</bucket>
+              <bucket>&quot;Skava&quot;</bucket>
+              <bucket>&quot;Xpanxion&quot;</bucket>
+              <bucket>&quot;Hudl&quot;</bucket>
+              <bucket>&quot;Phunware&quot;</bucket>
+              <bucket>&quot;Strata Decision Technology&quot;</bucket>
+              <bucket>&quot;Marathon Data Systems&quot;</bucket>
+              <bucket>&quot;Celerant Technology&quot;</bucket>
+              <bucket>&quot;e-Builder&quot;</bucket>
+              <bucket>&quot;InfoStretch&quot;</bucket>
+              <bucket>&quot;AgileThought&quot;</bucket>
+              <bucket>&quot;SPARC&quot;</bucket>
+              <bucket>&quot;MicroPact&quot;</bucket>
+              <bucket>&quot;Discovia&quot;</bucket>
+              <bucket>&quot;Nitro&quot;</bucket>
+              <bucket>&quot;NGP VAN&quot;</bucket>
+              <bucket>&quot;GPS Insight&quot;</bucket>
+              <bucket>&quot;Act-On Software&quot;</bucket>
+              <bucket>&quot;CityTech&quot;</bucket>
+              <bucket>&quot;Touchsuite&quot;</bucket>
+              <bucket>&quot;Qualifacts Systems&quot;</bucket>
+              <bucket>&quot;WTS Paradigm&quot;</bucket>
+              <bucket>&quot;AvidXchange&quot;</bucket>
+              <bucket>&quot;EMS Software by DEA&quot;</bucket>
+              <bucket>&quot;Motionsoft&quot;</bucket>
+              <bucket>&quot;ReverbNation&quot;</bucket>
+              <bucket>&quot;WebPT&quot;</bucket>
+              <bucket>&quot;Puppet Labs&quot;</bucket>
+              <bucket>&quot;Black Mountain Systems&quot;</bucket>
+              <bucket>&quot;Gorilla Commerce&quot;</bucket>
+              <bucket>&quot;Outsell&quot;</bucket>
+              <bucket>&quot;CashStar&quot;</bucket>
+              <bucket>&quot;Authenticom&quot;</bucket>
+              <bucket>&quot;Neogov&quot;</bucket>
+              <bucket>&quot;Fishbowl Inventory&quot;</bucket>
+              <bucket>&quot;Centare&quot;</bucket>
+              <bucket>&quot;LogiGear&quot;</bucket>
+              <bucket>&quot;Market6&quot;</bucket>
+              <bucket>&quot;Productive Edge&quot;</bucket>
+              <bucket>&quot;Harmonia&quot;</bucket>
+              <bucket>&quot;TempWorks Software&quot;</bucket>
+              <bucket>&quot;Projekt202&quot;</bucket>
+              <bucket>&quot;Jama Software&quot;</bucket>
+              <bucket>&quot;InsideView Technologies&quot;</bucket>
+              <bucket>&quot;Percona&quot;</bucket>
+              <bucket>&quot;Balihoo&quot;</bucket>
+              <bucket>&quot;Tealium&quot;</bucket>
+              <bucket>&quot;LawLogix Group&quot;</bucket>
+              <bucket>&quot;Chrome River Technologies&quot;</bucket>
+              <bucket>&quot;Branding Brand&quot;</bucket>
+              <bucket>&quot;Synerzip&quot;</bucket>
+              <bucket>&quot;Equus Software&quot;</bucket>
+              <bucket>&quot;Boost Software&quot;</bucket>
+              <bucket>&quot;SmartZip Analytics&quot;</bucket>
+              <bucket>&quot;Truenorthlogic&quot;</bucket>
+              <bucket>&quot;TakeLessons&quot;</bucket>
+              <bucket>&quot;Granbury Solutions&quot;</bucket>
+              <bucket>&quot;Viscira&quot;</bucket>
+              <bucket>&quot;Janrain&quot;</bucket>
+              <bucket>&quot;Alternative Technology Solutions&quot;</bucket>
+              <bucket>&quot;Audacious Inquiry&quot;</bucket>
+              <bucket>&quot;Clearleap&quot;</bucket>
+              <bucket>&quot;AirSage&quot;</bucket>
+              <bucket>&quot;Growth Acceleration Partners&quot;</bucket>
+              <bucket>&quot;MentorMate&quot;</bucket>
+              <bucket>&quot;Amadeus Consulting&quot;</bucket>
+              <bucket>&quot;Procore Technologies&quot;</bucket>
+              <bucket>&quot;Cadatasoft&quot;</bucket>
+              <bucket>&quot;Invoca&quot;</bucket>
+              <bucket>&quot;Panopto&quot;</bucket>
+              <bucket>&quot;Informz&quot;</bucket>
+              <bucket>&quot;Miva Merchant&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:industry:nk]'>
+            <groupfilter function='member' level='[none:industry:nk]' member='&quot;Software&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:industry:nk]</column>
+            <column>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[avg:revenue:qk]</column>
+            <column>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:company:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[avg:revenue:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[avg:revenue:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:state_s:nk] / [federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:company:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{1E3C32CE-0D84-41C8-BA20-21B72E5AEC83}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='typeinlist' param='[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:company:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:Calculation_426927225367900163:qk]</field>
+            <field>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:state_l:nk]</field>
+            <field>[federated.06c4uyo0yknrmp1d28vav1j2rsyl].[none:state_s:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C3461547-752D-490B-BABE-034081393120}' />
+    </window>
+  </windows>
+  <thumbnails>
+  </thumbnails>
+</workbook>
