@@ -1,4 +1,6 @@
-Sample Tableau dashboards for Tableau Superstore dataset.
+This repository contains several sample Tableau workbooks.
+
+## Description of workbooks
 
 20 KPI Cards Using Only Table Calculations
 * [20 KPI Cards Using Only Table Calculations.twb](./20%20KPI%20Cards%20Using%20Only%20Table%20Calculations.twb)
